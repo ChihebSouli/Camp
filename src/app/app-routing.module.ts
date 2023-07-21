@@ -1,3 +1,4 @@
+import { OrderProductComponent } from './order-product/order-product.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { MapComponent } from './map/map.component';
 import { NgModule } from '@angular/core';
@@ -47,6 +48,8 @@ const routes: Routes = [
   {path:'updateActivity/:id',component:UpdateactivityComponent},
   { path: 'map', component: MapComponent }, 
   { path: 'order-details/:orderId', component: OrderDetailComponent }, 
+  { path: 'order-product/:orderId', component: OrderProductComponent },
+  
 
 
   

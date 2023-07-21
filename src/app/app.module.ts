@@ -28,6 +28,7 @@ import { AddActiviteComponent } from './add-activite/add-activite.component';
 import { UpdateactivityComponent } from './updateactivity/updateactivity.component';
 import { MapComponent } from './map/map.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
+import { OrderProductComponent } from './order-product/order-product.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { OrderDetailComponent } from './order-detail/order-detail.component';
     AddActiviteComponent,
     UpdateactivityComponent,
     MapComponent,
-    OrderDetailComponent
+    OrderDetailComponent,
+    OrderProductComponent
     ],
   imports: [
     BrowserModule,
