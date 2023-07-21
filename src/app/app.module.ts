@@ -29,6 +29,7 @@ import { UpdateactivityComponent } from './updateactivity/updateactivity.compone
 import { MapComponent } from './map/map.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { OrderProductComponent } from './order-product/order-product.component';
+import { MydeliveriesComponent } from './mydeliveries/mydeliveries.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { OrderProductComponent } from './order-product/order-product.component';
     UpdateactivityComponent,
     MapComponent,
     OrderDetailComponent,
-    OrderProductComponent
+    OrderProductComponent,
+    MydeliveriesComponent
     ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+import { MydeliveriesComponent } from './mydeliveries/mydeliveries.component';
 import { OrderProductComponent } from './order-product/order-product.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { MapComponent } from './map/map.component';
@@ -49,6 +50,8 @@ const routes: Routes = [
   { path: 'map', component: MapComponent }, 
   { path: 'order-details/:orderId', component: OrderDetailComponent }, 
   { path: 'order-product/:orderId', component: OrderProductComponent },
+  { path: 'mydeliveries', component: MydeliveriesComponent }, 
+
   
 
 
