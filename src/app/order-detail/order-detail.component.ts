@@ -1,6 +1,7 @@
+import { OrderDetailService } from './../services/order-detail.service';
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { OrderDetailService } from '../services/order-detail.service';
 
 @Component({
   selector: 'app-order-detail',
@@ -21,6 +22,13 @@ export class OrderDetailComponent implements OnInit {
   }
 
   fetchOrderDetails(): void {
-    this.orderDetailService.getOrdersById(this.orderId)
+    this.orderDetailService.getOrderById(this.orderId).subscribe(
+      (data: any) => {
+        this.orderData = data;
+      },
+      (error) => {
+        console.error('Error fetching order details:', error);
+      }
+    );
   }
 }
