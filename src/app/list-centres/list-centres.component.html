@@ -1,0 +1,92 @@
+
+  <app-side-bar></app-side-bar>
+
+<div class="container" style="margin-left: 250px;">
+<div class="row">
+    <div class="col-12">
+      <div class="card mb-4">
+        <div class="card-header pb-0">
+          <h6>My Centres de camping</h6>
+        </div>
+        <div class="card-body px-0 pt-0 pb-2">
+          <div class="table-responsive p-0">
+            <table class="table align-items-center mb-0">
+                <thead>
+                  <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nom</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Adresse</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Description</th>
+                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Capacité d'accueil</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                   <tr *ngFor="let c of centres">
+                    <td>
+                      <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">{{ c.nom }}</h6>
+                          <!-- <p class="text-xs text-secondary mb-0">{{ reclamation.description }}</p> -->
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <!-- Render other properties of the reclamation object here -->
+                      <!-- <p class="text-xs font-weight-bold mb-0">{{ reclamati    on.status }}</p> -->
+                      <p class="text-xs text-secondary mb-0">{{ c.adresse  }}</p>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                        <span >
+                          {{ c.description  }}
+                        </span>
+                      </td>
+                      <td>
+                        <p class="align-middle text-center text-sm">{{ c.capaciteAcc  }}</p>
+                      </td>
+                
+                    <td class="align-middle">
+                      <a class="btn btn-link text-dark px-3 mb-0" [routerLink]="['/update-centre', c.id]">
+                        <i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>
+                          </a>
+                          <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;" (click)="onDeleteCentre(c.id)">
+                          <i class="far fa-trash-alt me-2"></i>
+                            </a>
+                            <!-- <button [routerLink]="['/centre-activites', c.id]">view activities</button> -->
+                            <div class="row">
+                              <div class="col-12">
+                                <button class="btn btn-primary mb-2" [routerLink]="['/centre-activites', c.id]">
+                                  Voir Activités
+                                </button>
+                              </div>
+                            </div>
+                                              </td>
+                  </tr>
+                </tbody>
+              </table>
+                        </div>
+                        
+        </div>
+            <!-- <div id="claimDet1" class="overlay12">
+                <div class="popup4">
+                    <a class="close" href="/myclaims"><i class="bi bi-x-circle-fill">aa</i>
+                    </a>
+            
+                </div>
+            </div> -->
+
+      </div>
+      <!-- Button trigger modal -->
+<!-- <a href="/myclaims/#claimDet1" >
+    Launch demo modal
+</a> -->
+
+  <!-- Modal -->
+</div>
+
+  </div>
+</div>
+
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  rel="stylesheet"
+>

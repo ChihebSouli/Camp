@@ -1,0 +1,23 @@
+.cont {
+    margin-top: 15px;
+}
+
+.success {
+    background-color: #07df0056;
+    /* width: 90%; */
+    color: rgb(19, 146, 19);
+    margin: 10px 0px;
+    padding:15px 10px 15px 10px;
+	font-size: 15px;
+	/* border-radius: 5px; */
+
+}
+
+.err {
+	background-color: #dd2215a6;
+    margin: 10px 0px;
+    padding:15px 10px 15px 10px;
+	font-size: 15px;
+	/* border-radius: 5px; */
+    color: white;
+}

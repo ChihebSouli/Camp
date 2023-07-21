@@ -1,0 +1,43 @@
+<app-side-bar></app-side-bar>
+
+<div class="container" style="margin-left: 250px;">
+<div class="row">
+    <div class="col-8">
+        <div class="card card-plain mt-8">
+            <div class="card-header pb-0 text-left bg-transparent">
+              <h3 class="font-weight-bolder text-info text-gradient">Ajouter un centre de camping</h3>
+            </div>
+            <div class="card-body">
+                <form #centreForm="ngForm" role="form" (ngSubmit)="onSubmit(centreForm)">
+
+                    <label>Nom du centre</label>
+                    <div class="mb-3">
+                      <input name="nom" ngModel type="text" class="form-control" placeholder="nom" aria-label="nom" 
+                      aria-describedby="password-addon">
+                    </div>
+
+                    <label>Description</label>
+                    <div class="mb-3">
+                      <textarea name="description" ngModel class="form-control" placeholder="Description" aria-label="Description" aria-describedby="password-addon"></textarea>
+                    </div>
+                    <label>Adresse</label>
+                    <div class="mb-3">
+                      <input name="adresse" type="text" ngModel class="form-control" placeholder="adresse" aria-label="adresse" aria-describedby="password-addon">
+                    </div>
+                    <label>Capacité d'accueil</label>
+                    <div class="mb-3">
+                      <input name="capaciteAcc" type="number" ngModel class="form-control" placeholder="capaciteAcc" aria-label="capaciteAcc" aria-describedby="password-addon">
+                    </div>
+                    <div class="form-check form-switch">
+                    </div>
+                    <div class="text-center">
+                      <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Send</button>
+                    </div>
+                  </form>
+                              </div>
+          </div>
+        
+    </div>
+  </div>
+</div>
+

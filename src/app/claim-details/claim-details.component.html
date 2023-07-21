@@ -1,0 +1,85 @@
+<app-side-bar></app-side-bar>
+
+
+<div class="container" style="margin-left: 250px;">
+    <div class="card-body pt-4 p-3">
+      <ul class="list-group" >
+        <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
+            <div class="d-flex flex-column">
+                <span class="mb-2 text-xs">
+                  <div class="d-flex flex-column justify-content-center">
+                      <h5 class="mb-0 text-sm">{{ reclamationInfo.user.username.toUpperCase() }}</h5>
+                      <p class="text-xs text-secondary mb-0">{{ reclamationInfo.user.email }}</p>
+                    </div>
+                </span>
+                <span>
+                  ---------------------------------
+                </span>
+              <span class="mb-2 text-xs">Claim Subject : <span class="text-dark font-weight-bold ms-sm-2">{{ reclamationInfo.title.toUpperCase() }}</span></span>
+              <span class="text-xs"><span class="mb-2 text-xs">{{ reclamationInfo.description }}</span></span>
+              <div class="ms-auto text-end">
+                  <span class="text-dark ms-sm-2 font-weight-bold"><span class=" text-xs">{{ reclamationInfo.dateRec }}</span></span>
+              </div>
+                </div>
+            
+            <div class="ms-auto text-end">
+              <div class="d-flex flex-column">
+                  <span [ngClass]="reclamationInfo.status === 'Waiting for treatment' ? 'badge badge-sm bg-gradient-secondary' : 'badge badge-sm bg-gradient-success'">
+                      {{ reclamationInfo.status }}
+                    </span>
+                    <a class="btn btn-link text-danger px-3 mb-0 text-end" href="javascript:;"  (click)="onDeleteReclamation(reclamationInfo.idRec)"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>DELETE</a>
+                  </div>
+              
+            </div>
+            
+          </li>
+    
+      </ul>
+      <div class="col-md-5 mt-4"  *ngIf="reclamationInfo.status === 'Closed'">
+        <div class="card h-100 mb-4">
+          <div class="card-header pb-0 px-3">
+            <div class="row">
+              <div class="col-md-6">
+                <h6 class="mb-0">Response</h6>
+              </div>
+              <!-- <div class="col-md-6 d-flex justify-content-end align-items-center">
+                <i class="far fa-calendar-alt me-2"></i>
+                <small>23 - 30 March 2020</small>
+              </div> -->
+            </div>
+          </div>
+          <div class="card-body pt-4 p-3">
+            <ul class="list-group" >
+              <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                <div class="d-flex align-items-center">
+                    <div class="d-flex flex-column">
+                    <span class="text-s">{{reclamationInfo.response}}</span>
+                  </div>
+                </div>                                            
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+      <div class="card-body" *ngIf="reclamationInfo.status === 'Waiting for treatment'">
+        <form role="form text-left"  #reclamationForm="ngForm">
+          <div class="row" >
+            <div class="col-6 mb-0">
+              <textarea name="response"  class="form-control" [(ngModel)]="reclamation.response" placeholder="Response.." aria-label="Description" aria-describedby="password-addon"></textarea>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-2 mb-2">
+              <button type="submit" (click)="onSubmit(reclamationForm)" class="btn bg-gradient-dark w-100 my-4 mb-2">Send Response</button>
+            </div>
+          </div>
+        </form>
+        
+              </div>
+        
+  
+    </div>
+    
+  </div>

@@ -1,0 +1,35 @@
+<app-side-bar></app-side-bar>
+
+<div class="container" style="margin-left: 250px;">
+<div class="row">
+    <div class="col-8">
+        <div class="card card-plain mt-8">
+            <div class="card-header pb-0 text-left bg-transparent">
+              <h3 class="font-weight-bolder text-info text-gradient">Update Post</h3>
+            </div>
+            <div class="card-body">
+                <form role="form" #postForm="ngForm">
+                    <label>Subject</label>
+                    <div class="mb-3">
+                      <input name="subject"  [(ngModel)]="forum.title"  type="subject" class="form-control" placeholder="subject" aria-label="Subject" aria-describedby="email-addon">
+                    </div>
+                    <label>Content</label>
+                    <div class="mb-3">
+                      <textarea name="content"   [(ngModel)]="forum.content"  class="form-control" placeholder="Content" aria-label="Content" aria-describedby="password-addon"></textarea>
+                    </div>
+                    <div class="form-check form-switch">
+                    </div>
+                    <label>Question</label>
+                    <div class="mb-3">
+                        <input name="question"  [(ngModel)]="forum.question"   type="question" class="form-control" placeholder="question" aria-label="Ti" aria-describedby="email-addon">
+                      </div>
+                    <div class="text-center">
+                      <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0" (click)="onSubmit(postForm)">Send</button>
+                    </div>
+                  </form>
+            </div>
+          </div>
+        
+    </div>
+  </div>
+</div>

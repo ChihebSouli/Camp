@@ -1,0 +1,91 @@
+<app-side-bar></app-side-bar>
+
+<div class="container" style="margin-left: 250px;">
+  <div class="card-body pt-4 p-3">
+    <ul class="list-group" >
+      <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
+        <div class="d-flex flex-column">
+            <span class="mb-2 text-xs">
+              <div class="d-flex flex-column justify-content-center">
+                  <h5 class="mb-0 text-sm">{{ forum.user.username.toUpperCase() }}</h5>
+                  <p class="text-xs text-secondary mb-0">{{ forum.user.email }}</p>
+                </div>
+            </span>
+          <span class="mb-2 text-xs">Post Subject <span class="text-dark font-weight-bold ms-sm-2"  [(ngModel)]="forum.title" >{{ forum.title }}</span></span>
+
+          <span class="text-xs"><span class="mb-2 text-xs" >{{ forum.content }}</span></span>
+          <span *ngIf="forum.question" class="mb-2 text-xs" >Question<span class="text-dark ms-sm-2 font-weight-bold" >{{ forum.question }}</span></span>   
+          <div class="ms-auto text-end">
+              <span class="text-dark ms-sm-2 font-weight-bold"><span class=" text-xs">{{ forum.creationDate }}</span></span>
+          </div>
+        </div>     
+        <div class="ms-auto text-end" *ngIf="authUser && authUser.id === forum.user.id">
+            <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"[routerLink]="['/update-post', forum.idForum]"> UPDATE</a>
+            <a class="btn btn-link text-danger px-3 mb-0" href="javascript:;" (click)="onDeleteForm(forum.idForum)" > DELETE</a>
+
+        </div>
+    
+      </li>
+      
+    </ul>
+    <div class="col-md-5 mt-4" *ngIf="comments.length > 0">
+      <div class="card h-100 mb-4">
+        <div class="card-header pb-0 px-3">
+          <div class="row">
+            <div class="col-md-6">
+              <h6 class="mb-0">Comments</h6>
+            </div>
+            <!-- <div class="col-md-6 d-flex justify-content-end align-items-center">
+              <i class="far fa-calendar-alt me-2"></i>
+              <small>23 - 30 March 2020</small>
+            </div> -->
+          </div>
+        </div>
+        <div class="card-body pt-4 p-3">
+          <ul class="list-group" *ngFor="let comment of comments">
+            <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+              <div class="d-flex align-items-center">
+                  <div class="d-flex flex-column">
+                  <h6 class="mb-1 text-dark text-sm">{{comment.user.username}}</h6>
+                  <span class="text-xs">{{comment.content}}</span>
+                </div>
+              </div>
+              <div class="d-flex align-items-center text-dark text-sm font-weight-bold">
+                <div class="d-flex flex-column">
+                  <span class="text-dark ms-sm-2 font-weight-bold">
+                    <span class="text-xs">{{ forum.creationDate }}</span>
+                  </span>
+                  <a class="btn btn-link text-danger px-3 mb-0" href="javascript:;" *ngIf="authUser && authUser.id === comment.user.id" 
+                  (click)="onDeleteComment(comment.idComment)" > DELETE</a>
+                </div>
+              </div>
+                                          
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-body">
+        <form role="form text-left" (ngSubmit)="onSubmit(commentForm)" #commentForm="ngForm" >
+          <div class="row">
+            <div class="col-6 mb-0">
+              <input name="content"  ngModel type="subject" class="form-control" placeholder="Comment..." aria-label="Content" aria-describedby="email-addon">
+            </div>
+          </div>
+          <div class="text-center mt-2" *ngIf="badWord">
+            <p class="text-danger">Bad Word</p>
+          </div>
+          <div class="row">
+            <div class="col-2 mb-2">
+              <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Add Comment</button>
+            </div>
+          </div>
+        </form>
+        
+              </div>
+      
+
+  </div>
+  
+</div>

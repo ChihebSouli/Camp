@@ -1,0 +1,21 @@
+.map-container {
+    position: fixed;
+    top: calc(200px); /* Adjust the margins (here it's 200px) to your desired size */
+    left: calc(200px);
+
+    width: 1500px; /* Set the width of the map container */
+    height: 600px; /* Set the height of the map container */
+    border: 10px solid #ccc; /* Add a border if desired */
+  }
+  
+  .show-location-button {
+    position: absolute;
+    top: 10px; /* Adjust the top position as needed */
+    left: 10px; /* Adjust the left position as needed */
+  }
+
+  .show-address-button {
+    position: absolute;
+    top: 10px; /* Adjust the top position as needed */
+    left: 200px; /* Adjust the left position as needed */
+  }
